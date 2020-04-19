@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  background-color: hsl(240, 78%, 98%);
+  min-height: 100vh;
+  color: hsl(233, 13%, 49%);
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: "";
+  background-image: url(../images/bg-top.svg);
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  background-image: url(../images/bg-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.container {
+  max-width: 100%;
+  width: 1400px;
+}
+
+.toggle-container {
+  color: hsl(234, 14%, 74%);
+  margin-bottom: 20px;
+}
+
+.flex {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.show-monthly .price-box .monthly {
+  display: block;
+}
+
+.show-monthly .price-box .annually {
+  display: none;
+}
+
+.price-box {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 5px 10px rgba(100, 0, 0, 0.1);
+}
+
+.price-box p {
+  font-size: 4em;
+  font-weight: 700;
+  padding: 25px;
+  margin: 0px auto;
+}
+
+.price-box ul {
+  border-top: 1px solid hsl(234, 14%, 74%);
+  list-style-type: none;
+  padding: 0;
+}
+
+.price-box ul li {
+  padding: 15px 0;
+  border-bottom: 1px solid hsl(234, 14%, 74%);
+  color: hsl(232, 13%, 33%);
+}
+
+.price-box button {
+  background-image: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+.price-box .monthly {
+  display: none;
+}
+
+.purple {
+  background-image: radial-gradient(hsl(237, 63%, 64%), hsl(236, 72%, 79%));
+  color: #fff;
+  transform: scaleX(1.15);
+}
+
+.purple * {
+  transform: scaleX(0.85);
+}
+
+.purple ul li {
+  color: #fff;
+}
+
+.purple button {
+  background-image: none;
+  background-color: #fff;
+  color: hsl(237, 63%, 64%);
+}
+
+.toggle-container label {
+  background-image: linear-gradient(
+    to right,
+    hsl(237, 63%, 64%),
+    hsl(236, 72%, 79%)
+  );
+  border-radius: 50px;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  position: relative;
+  z-index: 0;
+  margin: 0 10px;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-container label .ball {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #fff;
+  top: 2.5px;
+  left: 2.5px;
+  transition: transform 0.4s ease;
+}
+
+.toggle-container input {
+  position: absolute;
+  left: -9999px;
+}
+
+.toggle-container input:checked + label .ball {
+  transform: translateX(30px);
+}
+@media screen and (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .purple {
+    transform: scaleX(1);
+  }
+  .purple * {
+    transform: scaleX(1);
+  }
+}
